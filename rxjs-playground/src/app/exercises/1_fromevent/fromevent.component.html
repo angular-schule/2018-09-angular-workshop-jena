@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col text-center">
+    <h3>Current width</h3>
+    <div style="font-size: 80pt">{{ currentWidth }}</div>
+  </div>
+</div>
+
+<hr>
+
+<ul>
+  <li>Schreibe die jeweils aktuelle Fensterbreite in das Property <code>this.currentWidth</code></li>
+  <li>Nutze <code>fromEvent</code>, um das <code>resize</code>-Event auf <code>window</code> zu abonnieren.</li>
+  <li>Initialisiere das Observable mit der aktuellen Fensterbreite.</li>
+  <li>Entprelle den Eventstrom, damit nicht zu viele Events gefeuert werden</li>
+  <li>Tipp: <code>e.currentTarget.innerWidth</code></li>
+</ul>

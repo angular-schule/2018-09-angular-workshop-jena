@@ -1,0 +1,31 @@
+<button class="btn btn-primary mr-2" (click)="addListener()">Add listener</button>
+<button class="btn btn-outline-primary" (click)="addConsoleListener()">Add console listener</button>
+
+<div class="row">
+  <div class="col-3 mt-3" *ngFor="let l of listeners">
+    <div class="card">
+      <div class="card-header">
+        <div class="text-center">
+          <strong>{{ l }}</strong>
+        </div>
+      </div>
+      <div class="card-body text-center">
+        <h4>{{ measureValues$ | async | number:'1.4-4' }}</h4>
+      </div>
+    </div>
+  </div>
+</div>
+
+<rxw-history [logStream]="logStream$" class="mt-3"></rxw-history>
+
+<hr>
+
+<ul>
+  <li>Zunächst experimentieren wir mit Subjects: Erstelle ein Subject, registriere mehrere Subscriber und nutze <code>next()</code>, um das Subject auszulösen.</li>
+  <li>Wenn wir die Anatomie eines Subjects kennengelernt haben, machen wir eine praktische Übung:</li>
+  <li>Nutze den Service <code>MeasureValuesService</code>, um Livedaten zu empfangen und schreibe sie in das Property <code>measureValues$</code>.</li>
+  <li>Richte Multicasting ein: Erstelle im Property <code>this.measureValues$</code> ein Subject, auf das <em>mehrere</em> Subscriber lauschen können.</li>
+  <li>Es gibt mehrere Wege zu diesem Ziel.</li>
+  <li>Verwende erst <a href="https://rxjs-dev.firebaseapp.com/api/operators/share" target="_blank"><code>share()</code></a> und setze dann verschiedene Subjects ein: <code>Subject</code>, <code>BehaviorSubject</code>, <code>ReplaySubject</code></li>
+  <li>Vorsicht: Dieser Code hat einen Leak, weil die Subscriptions nicht beendet werden.</li>
+</ul>

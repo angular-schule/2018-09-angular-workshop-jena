@@ -1,0 +1,11 @@
+<button class="btn btn-danger" (click)="destroy()">Destroy</button>
+
+<rxw-history [logStream]="logStream$" class="mt-3"></rxw-history>
+
+<hr>
+
+<ul>
+  <li>Öffne die Browser-Console: Dort siehst Du den Output eines Observables, das jede Sekunde einen Wert generiert.</li>
+  <li>Navigiere zurück auf die Startseite und beobachte die Console: Die Subscription läuft weiter. Wir haben einen klassischen Memory Leak erzeugt...</li>
+  <li>Sorge dafür, dass die Subscription in der Methode <code>destroy()</code> beendet wird. Sie wird beim Buttonklick und beim Wegnavigieren ausgelöst.</li>
+</ul>

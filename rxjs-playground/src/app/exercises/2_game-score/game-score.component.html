@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col text-center">
+      <button class="btn btn-sm btn-success mr-2" (click)="addScore(10)">+10</button>
+      <button class="btn btn-sm btn-success mr-2" (click)="addScore(20)">+20</button>
+      <button class="btn btn-sm btn-success mr-2" (click)="addScore(50)">+50</button>
+      <button class="btn btn-sm btn-danger mr-2" (click)="addScore(-10)">–10</button>
+      <button class="btn btn-sm btn-danger mr-2" (click)="addScore(-20)">–20</button>
+      <button class="btn btn-sm btn-danger mr-2" (click)="addScore(-50)">–50</button>
+  </div>
+</div>
+
+<div class="row mt-2">
+  <div class="col text-center">
+      <button class="btn btn-sm btn-outline-primary mr-2" (click)="finishGame()">Finish game (complete)</button>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-6 text-center">
+    <h3>Current Score</h3>
+    <div style="font-size: 70pt">{{ currentScore }}</div>
+  </div>
+  <div class="col-6 text-center">
+    <h3>Final Score</h3>
+    <div style="font-size: 70pt">{{ finalScore || '–' }}</div>
+  </div>
+</div>
+
+<rxw-history [logStream]="logStream$" class="mt-3"></rxw-history>

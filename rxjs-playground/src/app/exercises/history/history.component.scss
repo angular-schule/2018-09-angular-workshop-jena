@@ -1,0 +1,33 @@
+:host {
+    background: #333333;
+    color: white;
+    padding: 15px 15px 30px 15px;
+    display: block;
+    border-radius: 5px;
+    font-size: .9em;
+    height: 300px;
+    overflow: hidden;
+    
+    a.clear {
+        float: right;
+        font-size: .8em;
+        color: #AAA;
+    }
+    
+    div.scroll-container {
+        overflow: scroll;
+        height: 230px;
+        margin-top: 5px;
+        font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        
+        p {
+            padding: 2px 0;
+            margin: 0;
+        }
+        
+        span.prefix {
+            color: #AAA;
+        }
+
+    }
+}
