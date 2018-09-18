@@ -1,0 +1,14 @@
+<!--<br-create-book></br-create-book>-->
+
+<div class="progress mb-4 mt-5" *ngIf="loading$ | async">
+  <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 100%">
+    Bücher werden geladen…
+  </div>
+</div>
+
+
+<p>
+  <br-book *ngFor="let b of books$ | async"
+    [book]="b"
+    ></br-book>
+</p>
