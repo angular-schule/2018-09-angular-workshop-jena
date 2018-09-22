@@ -2,6 +2,8 @@
 
 #### **von Ferdinand Malcher**
 
+[![Join the chat at https://gitter.im/2018-09-angular-workshop-jena/Lobby](https://badges.gitter.im/2018-09-angular-workshop-jena/Lobby.svg)](https://gitter.im/2018-09-angular-workshop-jena/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 <hr>
 
 **Schön, dass Du dabei bist!**  
