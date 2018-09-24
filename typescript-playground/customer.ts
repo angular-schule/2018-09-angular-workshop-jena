@@ -12,6 +12,14 @@ ist ${this.id}!`;
 
         return callback1();
     }
+
+
+    myMethod(arg: string | number) {
+        if(typeof arg === 'number') {
+            return arg;
+        }
+        return arg;
+    }
 }
 
 
