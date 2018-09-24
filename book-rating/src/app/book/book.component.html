@@ -8,6 +8,7 @@
         <span class="badge badge-secondary">{{ book.rating }}</span>
       </h2>
     </div>
+    <span *ngFor="let r of getStars()">⭐️</span>
     <p>{{ book.description }}</p>
   </div>
 </div>
