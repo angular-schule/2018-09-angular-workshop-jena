@@ -1,0 +1,3 @@
+https://angular.io/styleguide
+https://github.com/mgechev/ngrev
+https://github.com/mgechev/ngworld
