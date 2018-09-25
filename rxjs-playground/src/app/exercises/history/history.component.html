@@ -1,0 +1,8 @@
+<strong>Console</strong>
+<a class="clear" (click)="clearHistory()" href="javascript:;">Clear history</a>
+
+<div class="scroll-container" #scrollContainer>
+  <p *ngFor="let m of messages">
+    <span class="prefix">&gt;</span> {{ m }}
+  </p>
+</div>

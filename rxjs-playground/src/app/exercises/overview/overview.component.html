@@ -1,0 +1,30 @@
+<h1>Exercises</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Location</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tr *ngFor="let e of exercises; index as i">
+    <td>
+      {{ i + 1 }}
+    </td>
+    <td>
+      {{ e.name }}
+    </td>
+    <td>
+      <span *ngIf="e.folder">
+        <img *ngIf="e.component" src="assets/angular-logo.svg" width="20" class="mr-2">
+        <img *ngIf="!e.component" src="assets/Octicons-terminal.svg" width="20" class="mr-2">
+        <code>{{ e.folder }}</code>
+      </span>
+    </td>
+    <td class="text-center">
+      <a *ngIf="e.component" class="btn btn-sm btn-success" [routerLink]="['/exercises', i + 1]">Open</a>
+    </td>
+  </tr>
+</table>

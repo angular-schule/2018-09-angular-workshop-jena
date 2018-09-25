@@ -1,0 +1,15 @@
+<button class="btn btn-sm btn-primary mr-2" (click)="sendValue('Katze')">Katze</button>
+<button class="btn btn-sm btn-success mr-2" (click)="sendValue('Maus')">Maus</button>
+<button class="btn btn-sm btn-danger mr-2" (click)="sendValue('Hund')">Hund</button>
+<button class="btn btn-sm btn-warning mr-5" (click)="sendValue('Vogel')">Vogel</button>
+<button class="btn btn-sm btn-outline-primary mr-2" (click)="echoTest()">Echo Test</button>
+
+<rxw-history [logStream]="logStream$" class="mt-3"></rxw-history>
+
+<hr>
+
+<ul>
+  <li>Löse für jedes Tier-Event im <code>source$</code>-Stream ein Echo aus.</li>
+  <li>Die Methode <code>this.es.echo(message: string, repeat: number)</code> gibt ein Observable zurück, das Echos produziert.</li>
+  <li>Probiere aus, wie sich <code>concatMap</code>, <code>mergeMap</code>, <code>switchMap</code> und <code>exhaustMap</code> unterschiedlich verhalten.</li>
+</ul>
