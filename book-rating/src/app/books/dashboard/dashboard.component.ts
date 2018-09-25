@@ -10,6 +10,7 @@ export class DashboardComponent implements OnInit {
 
   books: Book[];
   url = '//angular.schule';
+  d = new Date();
 
   constructor() { }
 

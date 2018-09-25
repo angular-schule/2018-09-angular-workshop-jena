@@ -1,3 +1,5 @@
 https://angular.io/styleguide
 https://github.com/mgechev/ngrev
 https://github.com/mgechev/ngworld
+
+https://comlounge.net/npm-left-pad-javascript-markenstreit/
