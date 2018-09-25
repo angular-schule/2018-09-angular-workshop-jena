@@ -82,7 +82,7 @@ describe('BookComponent', () => {
     verify(spiedComp.rateUp()).once();
   });
 
-  fit('should display the correct rating', () => {
+  it('should display the correct rating', () => {
     const ratingBox = fixture.debugElement
       .query(By.css('.testing-rating-box'))
       .nativeElement;
@@ -95,7 +95,7 @@ describe('BookComponent', () => {
     expect(ratingBox.textContent).toBe('5');
   });
 
-  fit('should throw rate event for rateUp', (done) => {
+  it('should throw rate event for rateUp', (done) => {
     // Mockservice mit Funktionalität füllen: Wenn rateUp aufgerufen wird
     // dann konkreten Wert returnen
     when(rs.rateUp(anything()))
