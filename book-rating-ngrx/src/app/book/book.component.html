@@ -1,0 +1,35 @@
+<div class="card mb-4">
+  <div class="card-body bg-light">
+
+    <img class="img-thumbnail float-right"
+         src="{{ book.thumbnail }}" width="150">
+
+    <div class="card-title">
+      <h2>
+        {{ book.title }}
+        <span class="badge badge-secondary">
+          {{ book.rating }}
+        </span>
+      </h2>
+
+    </div>
+    <p>
+      {{ book.description }}
+    </p>
+
+    <!--
+    <button
+      [disabled]="!rateDownAllowed"
+      (click)="doRateDown()"
+      class="mr-2 btn btn-danger">👎</button>
+
+    <button
+      [disabled]="!rateUpAllowed"
+      (click)="doRateUp()"
+      class="btn btn-success mr-2">👍</button>
+
+    <a [routerLink]="['/book', book.isbn]" class="btn btn-secondary">Details</a>
+    -->
+
+  </div>
+</div>
