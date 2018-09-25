@@ -1,14 +1,16 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output, ChangeDetectionStrategy } from '@angular/core';
 import { Book } from '../shared/book';
 import { BookRatingService } from '../shared/book-rating.service';
 
 @Component({
   selector: 'br-book',
   templateUrl: './book.component.html',
-  styleUrls: ['./book.component.scss']
+  styleUrls: ['./book.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BookComponent implements OnInit {
 
+  @Output() rate = new EventEmitter<Book>();
   @Input() book: Book;
 
   constructor(private rs: BookRatingService) { }
@@ -28,9 +30,7 @@ export class BookComponent implements OnInit {
 
   rateUp() {
     const ratedBook = this.rs.rateUp(this.book);
-    console.log(ratedBook);
-
-    this.book = ratedBook; // noch nicht gut, weil das Dashboard nicht informiert wird
+    this.rate.emit(ratedBook);
   }
 
 }

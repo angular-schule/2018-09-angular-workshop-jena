@@ -37,4 +37,11 @@ export class DashboardComponent implements OnInit {
     ];
   }
 
+  updateSortList(book: Book) {
+    const cleanedList = this.books.filter(b => b.isbn !== book.isbn);
+    cleanedList.push(book);
+    cleanedList.sort((a, b) => b.rating - a.rating);
+    this.books = cleanedList;
+  }
+
 }

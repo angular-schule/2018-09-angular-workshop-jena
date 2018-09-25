@@ -3,3 +3,5 @@ https://github.com/mgechev/ngrev
 https://github.com/mgechev/ngworld
 
 https://comlounge.net/npm-left-pad-javascript-markenstreit/
+https://stackblitz.com/edit/angular-onpush1?file=src%2Fapp%2Fapp.component.html
+https://doesitmutate.xyz/
