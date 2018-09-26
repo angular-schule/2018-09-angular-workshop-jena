@@ -4,8 +4,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { BookDetailsComponent } from './book-details/book-details.component';
 
 const routes: Routes = [
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'book/:isbn', component: BookDetailsComponent }
+  { path: '', component: DashboardComponent },
+  { path: ':isbn', component: BookDetailsComponent }
 ];
 
 @NgModule({

@@ -5,7 +5,6 @@ import localeDe from '@angular/common/locales/de';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BooksModule } from './books/books.module';
 
 @NgModule({
   declarations: [
@@ -14,8 +13,7 @@ import { BooksModule } from './books/books.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
-    BooksModule
+    HttpClientModule
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'de' }
