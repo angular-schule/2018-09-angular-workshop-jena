@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'br-create-book',
@@ -7,11 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateBookComponent implements OnInit {
 
-  foo = 'test';
+  bookForm: FormGroup;
 
   constructor() { }
 
   ngOnInit() {
+    this.bookForm = new FormGroup({
+      isbn: new FormControl(''),
+      title: new FormControl(''),
+      description: new FormControl('')
+    });
   }
 
 }
