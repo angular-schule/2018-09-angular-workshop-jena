@@ -21,7 +21,6 @@ import { BookDetailsComponent } from './book-details/book-details.component';
     BookComponent,
     CreateBookComponent,
     BookDetailsComponent
-  ],
-  exports: [DashboardComponent] // kann später wieder weg
+  ]
 })
 export class BooksModule { }
