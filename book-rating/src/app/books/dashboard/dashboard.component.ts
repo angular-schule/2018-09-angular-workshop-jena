@@ -9,27 +9,31 @@ import { BookStoreService } from '../shared/book-store.service';
 })
 export class DashboardComponent implements OnInit {
 
-  books: Book[];
+  books: Book[] = [];
   url = '//angular.schule';
   d = new Date();
 
   constructor(private bs: BookStoreService) { }
 
   ngOnInit() {
-    this.books = this.bs.getAllStatic();
+    // this.books = this.bs.getAllStatic();
+    this.bs.getAll()
+      .subscribe(books => this.books = books);
   }
 
   updateSortList(book: Book) {
-    const cleanedList = this.books.filter(b => b.isbn !== book.isbn);
-    cleanedList.push(book);
-    cleanedList.sort((a, b) => b.rating - a.rating);
-    this.books = cleanedList;
+    this.bs.update(book.isbn, book).subscribe(() => {
+      const cleanedList = this.books.filter(b => b.isbn !== book.isbn);
+      cleanedList.push(book);
+      cleanedList.sort((a, b) => b.rating - a.rating);
+      this.books = cleanedList;
+    });
   }
 
   addBookToList(book: Book) {
-    this.books = [...this.books, book];
-
-    // TODO: zum Server schicken
+    this.bs.create(book).subscribe(() => {
+      this.books = [...this.books, book];
+    });
   }
 
 }

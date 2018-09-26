@@ -8,3 +8,4 @@ https://doesitmutate.xyz/
 
 https://github.com/angular/angular/pull/18514
 https://toddmotto.com/building-tesla-range-calculator-angular-2-reactive-forms
+https://github.com/formly-js/ngx-formly
