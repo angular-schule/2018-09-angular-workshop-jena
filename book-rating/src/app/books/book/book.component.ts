@@ -33,4 +33,9 @@ export class BookComponent implements OnInit {
     this.rate.emit(ratedBook);
   }
 
+  rateDown() {
+    const ratedBook = this.rs.rateDown(this.book);
+    this.rate.emit(ratedBook);
+  }
+
 }
