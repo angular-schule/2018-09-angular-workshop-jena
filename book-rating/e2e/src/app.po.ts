@@ -7,5 +7,6 @@ export class AppPage {
 
   getParagraphText() {
     return element(by.css('br-root h1')).getText();
+    // oder $()
   }
 }
