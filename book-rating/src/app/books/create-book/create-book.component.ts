@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Book } from '../shared/book';
 
@@ -8,6 +8,8 @@ import { Book } from '../shared/book';
   styleUrls: ['./create-book.component.scss']
 })
 export class CreateBookComponent implements OnInit {
+
+  @Output() create = new EventEmitter<Book>();
 
   bookForm: FormGroup;
 
@@ -32,7 +34,14 @@ export class CreateBookComponent implements OnInit {
       rating: 1
     };
 
-    console.log(newBook);
+    // Event verschicken
+    this.create.emit(newBook);
+
+    this.bookForm.reset({
+      title: '',
+      isbn: '',
+      description: ''
+    });
 
   }
 
