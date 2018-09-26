@@ -25,6 +25,9 @@ export class CreateBookComponent implements OnInit {
       title: new FormControl('', Validators.required),
       description: new FormControl('')
     });
+
+    this.bookForm.valueChanges
+      .subscribe(e => console.log(e));
   }
 
   submitForm() {

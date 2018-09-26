@@ -7,3 +7,4 @@ https://stackblitz.com/edit/angular-onpush1?file=src%2Fapp%2Fapp.component.html
 https://doesitmutate.xyz/
 
 https://github.com/angular/angular/pull/18514
+https://toddmotto.com/building-tesla-range-calculator-angular-2-reactive-forms
