@@ -24,7 +24,7 @@ export class BookDetailsComponent implements OnInit {
       this.bs.getSingle(isbn).subscribe(book => this.book = book);
     });
 
-
+    
   }
 
 }

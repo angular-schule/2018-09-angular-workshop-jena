@@ -1,8 +1,14 @@
-<pre>
-  {{ book | json }}
-</pre>
+<ng-container *ngIf="book; else loading">
+  <pre>
+    {{ book | json }}
+  </pre>
+  
+  {{ book.title }}
+</ng-container>
 
-
+<ng-template #loading>
+  <strong>Loading...</strong>
+</ng-template>
 
 <a routerLink="/dashboard">Zum Dashboard</a><br>
 <a routerLink="/book/3333333333322">Zum Lieblingsbuch</a>
