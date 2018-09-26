@@ -7,6 +7,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { BookComponent } from './book/book.component';
 import { GeneralSharedModule } from '../general-shared/general-shared.module';
 import { CreateBookComponent } from './create-book/create-book.component';
+import { BookDetailsComponent } from './book-details/book-details.component';
 
 @NgModule({
   imports: [
@@ -18,7 +19,8 @@ import { CreateBookComponent } from './create-book/create-book.component';
   declarations: [
     DashboardComponent,
     BookComponent,
-    CreateBookComponent
+    CreateBookComponent,
+    BookDetailsComponent
   ],
   exports: [DashboardComponent] // kann später wieder weg
 })

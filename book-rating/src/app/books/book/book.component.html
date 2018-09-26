@@ -14,6 +14,7 @@
     <p>
       <button class="btn btn-secondary mr-2 testing-rate-up-btn" (click)="rateUp()">+</button>
       <button class="btn btn-secondary mr-2" (click)="rateDown()">-</button>
+      <a [routerLink]="['/book', book.isbn]">Details</a>
     </p>
   </div>
 </div>
