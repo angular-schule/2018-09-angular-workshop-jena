@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { timer, Observable } from 'rxjs';
-import { take } from 'rxjs/operators';
+import { timer, Observable, of, from } from 'rxjs';
+import { take, map, filter } from 'rxjs/operators';
 
 @Component({
   selector: 'br-root',
@@ -12,43 +12,20 @@ export class AppComponent {
 
   constructor() {
 
-    const myObs = timer(0, 1000).pipe(take(5));
-    // import { timer } from 'rxjs';
-    // import { take } from 'rxjs/operators';
-
-    const sub = myObs.subscribe(
-      e => console.log(e),
-      err => console.error(err),
-      () => console.log('COMPLETE')
-    );
-
-    setTimeout(() => {
-      sub.unsubscribe();
-    }, 3000);
-
-
     const observer = {
       next: e => console.log(e),
       error: err => console.error(err),
       complete: () => console.log('COMPLETE')
     };
 
+    // of(1, 2, 3, 4, 5).subscribe(observer);
+    // from([5, 6, 7, 8]).subscribe(observer);
 
-    // Funktion: Producer Function
-    const myObs2 = new Observable((observer1) => {
-      observer1.next(3);
-      observer1.next(4);
-
-      setTimeout(() => {
-        observer1.next(5);
-        observer1.complete();
-
-        // kommt nicht durch, weil nach complete!
-        observer1.next(6);
-      }, 2000);
-    });
-
-    myObs2.subscribe(observer);
+    timer(0, 1000).pipe(
+      map(e => e + 10),
+      filter(e => e % 2 === 0)
+    )
+    .subscribe(observer);
 
   }
 }
