@@ -13,7 +13,7 @@ export class HigherorderComponent implements OnInit {
 
   logStream$ = new Subject<string>();
   source$ = new Subject<string>();
-  result$: Observable<string>;
+  result$: Observable<any>;
 
   constructor(private es: ExerciseService) { }
 
@@ -21,6 +21,9 @@ export class HigherorderComponent implements OnInit {
     
     /******************************/
 
+      this.result$ = this.source$.pipe(
+        exhaustMap(e => this.es.echo(e, 3))
+      );
 
     /******************************/
     
