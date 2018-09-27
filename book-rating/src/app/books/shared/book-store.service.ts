@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Book } from './book';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -13,11 +14,27 @@ export class BookStoreService {
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<Book[]> {
-    return this.http.get<Book[]>(`${this.apiUrl}/books`);
+    return this.http.get<any[]>(`${this.apiUrl}/books`).pipe(
+      map(rawBooks => rawBooks.map(
+        rawBook => this.mapToBook(rawBook)
+      ))
+    );
   }
 
   getSingle(isbn: string): Observable<Book> {
-    return this.http.get<Book>(`${this.apiUrl}/book/${isbn}`);
+    return this.http.get<any>(`${this.apiUrl}/book/${isbn}`).pipe(
+      map(rawBook => this.mapToBook(rawBook))
+    );
+  }
+
+
+  private mapToBook(rawBook: any): Book {
+    return {
+      title: rawBook.title,
+      isbn: rawBook.isbn,
+      description: rawBook.description,
+      rating: rawBook.rating
+    };
   }
 
   create(book: Book): Observable<any> {
