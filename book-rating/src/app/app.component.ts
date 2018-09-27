@@ -25,7 +25,7 @@ export class AppComponent {
       map(e => e + 10),
       filter(e => e % 2 === 0)
     )
-    .subscribe(observer);
+    // .subscribe(observer);
 
   }
 }

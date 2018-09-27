@@ -1,6 +1,8 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Book } from '../shared/book';
+import { BookStoreService } from '../shared/book-store.service';
+import { map, distinctUntilChanged, debounceTime, filter, switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'br-create-book',
@@ -13,7 +15,7 @@ export class CreateBookComponent implements OnInit {
 
   bookForm: FormGroup;
 
-  constructor() { }
+  constructor(private bs: BookStoreService) { }
 
   ngOnInit() {
     this.bookForm = new FormGroup({
@@ -26,8 +28,14 @@ export class CreateBookComponent implements OnInit {
       description: new FormControl('')
     });
 
-    this.bookForm.valueChanges
-      .subscribe(e => console.log(e));
+    this.bookForm.valueChanges.pipe(
+      map(value => value.title),
+      distinctUntilChanged(),
+      debounceTime(1000),
+      filter(term => term.length >= 3),
+      switchMap(term => this.bs.search(term))
+    )
+    .subscribe(e => console.log(e));
   }
 
   submitForm() {

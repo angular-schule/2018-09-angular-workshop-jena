@@ -53,6 +53,15 @@ export class BookStoreService {
     );
   }
 
+  search(term: string): Observable<Book[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/books/search/${term}`).pipe(
+      map(rawBooks => rawBooks ? rawBooks : []),
+      map(rawBooks => rawBooks.map(
+        rawBook => this.mapToBook(rawBook))
+      )
+    );
+  }
+
   getAllStatic(): Book[] {
     return [
       {
